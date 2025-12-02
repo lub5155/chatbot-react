@@ -54,7 +54,9 @@ function ChatMessage(){
   return (
     <>
      {messageComponents.map((messageComponents) => {
-       <ChatMsg message={messageComponents.message} sender={messageComponents.sender}/>
+      return (
+       <ChatMsg key={messageComponents.id} message={messageComponents.message} sender={messageComponents.sender}/>
+      )
      })}
     </>
   )
@@ -63,11 +65,8 @@ function ChatMessage(){
           return (
              <div >
               <div id="box">
-                  <ChatMsg message='how can i help u?' sender="bot"/>
-                  <ChatMsg message='hello bro' sender="user"/>
-                  <ChatMsg message='how can i help u?' sender="bot"/>
-                  <ChatMsg message='hello bro' sender="user"/>
-                  <ChatMsg message='how can i help u?' sender="bot"/>
+                  <ChatMessage />
+                  <ChatMessage />
               </div>
               <div>
                   <ChatInp />
